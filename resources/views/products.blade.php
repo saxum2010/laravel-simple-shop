@@ -4,34 +4,29 @@
 
 @section('content')
 
-    <div class="container products">
-
-        @if(session('success'))
-
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-
-        @endif
-
-        <div class="row">
-
-            @foreach($products as $product)
-                <div class="col-xs-18 col-sm-6 col-md-3">
-                    <div class="thumbnail">
-                        <img src="{{ $product->photo }}" width="100%">
-                        <div class="caption">
-                            <h4>{{ $product->name }}</h4>
-                            <p>{{ Str::limit(strtolower($product->description), 50) }}</p>
-                            <p><strong>Price: </strong> {{ $product->price }}$</p>
-                            <p class="btn-holder"><a href="{{ url('add-to-cart/'.$product->id) }}" class="btn btn-warning btn-block text-center" role="button">Add to cart</a> </p>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-
-        </div><!-- End row -->
-
+@if(session('success'))
+<div class="row">
+    <div class="alert alert-success">
+        {{ session('success') }}
     </div>
+</div>
+@endif
 
+<div class="row flex">
+        @foreach($products as $product)
+        <section>
+
+            <img src="{{ $product->photo }}" alt="{{ $product->name }}" />
+              <h2>{{ $product->name }}</h2>
+              <p>{{ Str::limit(strtolower($product->description), 50) }}</p>
+              <aside>
+                <ul>
+                  <li>Price: {{ $product->price }}</li>
+                  <li>In Stock</li>
+                </ul>
+                <a href="{{ url('add-to-cart/'.$product->id) }}" class="btn btn-warning btn-block text-center add-to-cart" role="button">Add to cart</a>
+              </aside>
+        </section>
+        @endforeach
+    </div>
 @endsection
