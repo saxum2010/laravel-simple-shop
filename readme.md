@@ -6,12 +6,12 @@
 
 ## Install
 
-```composer install```
+> `composer install`
 
-```npm install```
+> `npm install`
 
-```php artisan key:generate```
+> `php artisan key:generate`
 
-```php artisan migrate```
+> `php artisan migrate`
 
-```php artisan make:seed ProductsSeeder```
+> `php artisan make:seed ProductsSeeder`
