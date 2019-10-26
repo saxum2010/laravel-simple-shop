@@ -7,7 +7,7 @@
   <title>@yield('title')</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -21,7 +21,7 @@
     <div class="container-fluid">
       <nav>
         <ul>
-          <li><a href="/" title="Home">Home</a></li>
+          <li><a href="/" title="Home"><i class="fa fa-home"></i> Home</a></li>
           <li><a href="/" class="active" title="Smartphones">Smartphones</a></li>
           <li><a href="/" title="About">About</a></li>
           <li>
@@ -30,7 +30,7 @@
                 <button type="button" class="btn btn-info btn-shopping-cart" data-toggle="dropdown">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-danger">
                         @if(session('cart')!==null)
-                        {{ count((array)session('cart')) }}
+                          {{ count((array)session('cart')) }}
                         @endif
                     </span>
                 </button>

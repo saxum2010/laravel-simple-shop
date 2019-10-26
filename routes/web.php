@@ -20,3 +20,6 @@ Route::get('add-to-cart/{id}', 'ProductsController@addToCart');
 Route::patch('update-cart', 'ProductsController@update');
 
 Route::delete('remove-from-cart', 'ProductsController@remove');
+Route::get('checkout', 'OrderController@checkout');
+Route::post('order/store','OrderController@store');
+Route::get('success','OrderController@success');
