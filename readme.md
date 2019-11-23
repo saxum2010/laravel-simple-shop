@@ -14,4 +14,4 @@
 
 > `php artisan migrate`
 
-> `php artisan make:seed ProductsSeeder`
+> `php artisan db:seed --class=ProductsSeeder`
